@@ -1,4 +1,4 @@
-import streamlit as st
+StrOutputParserimport streamlit as st
 from card_rag import search_card
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -71,7 +71,7 @@ final_prompt = ChatPromptTemplate([
 # 사용자 입력값을 받아 딕셔너리를 생성하는 함수 정의
 def get_user_input(question):
     return{
-        "chat_history" : st.session_state["pre_memory"].chat_memory.messaes,
+        "chat_history" : st.session_state["pre_memory"].chat_memory.messages,
         "question" : question,
         "context" : search_card(question)
     }
